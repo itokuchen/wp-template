@@ -1,0 +1,63 @@
+global:
+  sql_adapter: default
+
+local:
+  vhost: "http://lvh.me"
+  wordpress_path: "/var/www/html/"
+  database:
+    name: "wordpress"
+    user: "root"
+    password: "wordpress"
+    host: "database"
+
+production:
+  vhost: "<%= ENV['PRODUCTION_URL'] %>"
+  wordpress_path: "<%= ENV['PRODUCTION_DIR_PATH'] %>"
+
+  database:
+    name: "<%= ENV['PRODUCTION_DB_NAME'] %>"
+    user: "<%= ENV['PRODUCTION_DB_USER'] %>"
+    password: "<%= ENV['PRODUCTION_DB_PASSWORD'] %>"
+    host: "<%= ENV['PRODUCTION_DB_HOST'] %>"
+    port: "<%= ENV['PRODUCTION_DB_PORT'] %>"
+
+  exclude:
+    - ".DS_Store"
+    - '.gitignore'
+    - ".htaccess"
+    - ".htpasswd"
+    - "phpmyadmin"
+    - "wp-config.php"
+    - "wp-content/*.sql"
+
+  ssh:
+    host: "<%= ENV['PRODUCTION_SSH_HOST'] %>"
+    user: "<%= ENV['PRODUCTION_SSH_USER'] %>"
+    port: "<%= ENV['PRODUCTION_SSH_PORT'] %>"
+    rsync_options: "--verbose"
+
+staging:
+  vhost: "<%= ENV['STAGING_URL'] %>"
+  wordpress_path: "<%= ENV['STAGING_DIR_PATH'] %>"
+
+  database:
+    name: "<%= ENV['STAGING_DB_NAME'] %>"
+    user: "<%= ENV['STAGING_DB_USER'] %>"
+    password: "<%= ENV['STAGING_DB_PASSWORD'] %>"
+    host: "<%= ENV['STAGING_DB_HOST'] %>"
+    port: "<%= ENV['STAGING_DB_PORT'] %>"
+
+  exclude:
+    - ".DS_Store"
+    - '.gitignore'
+    - ".htaccess"
+    - ".htpasswd"
+    - "phpmyadmin"
+    - "wp-config.php"
+    - "wp-content/*.sql"
+
+  ssh:
+    host: "<%= ENV['STAGING_SSH_HOST'] %>"
+    user: "<%= ENV['STAGING_SSH_USER'] %>"
+    port: "<%= ENV['STAGING_SSH_PORT'] %>"
+    rsync_options: "--verbose"

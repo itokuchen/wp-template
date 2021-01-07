@@ -1,0 +1,75 @@
+/**
+ * ----------------------------------------------------------------------------
+ * Noto Sans
+ * ----------------------------------------------------------------------------
+ */
+
+/// YakuHanJP
+$yakuhanjp-eot-use: false;
+$yakuhanjp-cdn-use: true;
+@import "../../../node_modules/yakuhanjp/src/scss/yakuhanjp";
+
+/// Noto Sans CJK JP
+@font-face {
+  font-family: "Noto Sans CJK JP Subset";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src:
+    url(/wp-content/themes/#{$theme}/assets/fonts/NotoSans/NotoSansCJKjp-Thin.woff2) format("woff2"),
+    url(/wp-content/themes/#{$theme}/assets/fonts/NotoSans/NotoSansCJKjp-Thin.woff) format("woff");
+}
+@font-face {
+  font-family: "Noto Sans CJK JP Subset";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src:
+    url(/wp-content/themes/#{$theme}/assets/fonts/NotoSans/NotoSansCJKjp-Light.woff2) format("woff2"),
+    url(/wp-content/themes/#{$theme}/assets/fonts/NotoSans/NotoSansCJKjp-Light.woff) format("woff");
+}
+@font-face {
+  font-family: "Noto Sans CJK JP Subset";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src:
+    url(/wp-content/themes/#{$theme}/assets/fonts/NotoSans/NotoSansCJKjp-DemiLight.woff2) format("woff2"),
+    url(/wp-content/themes/#{$theme}/assets/fonts/NotoSans/NotoSansCJKjp-DemiLight.woff) format("woff");
+}
+@font-face {
+  font-family: "Noto Sans CJK JP Subset";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url(/wp-content/themes/#{$theme}/assets/fonts/NotoSans/NotoSansCJKjp-Regular.woff2) format("woff2"),
+    url(/wp-content/themes/#{$theme}/assets/fonts/NotoSans/NotoSansCJKjp-Regular.woff) format("woff");
+}
+@font-face {
+  font-family: "Noto Sans CJK JP Subset";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url(/wp-content/themes/#{$theme}/assets/fonts/NotoSans/NotoSansCJKjp-Medium.woff2) format("woff2"),
+    url(/wp-content/themes/#{$theme}/assets/fonts/NotoSans/NotoSansCJKjp-Medium.woff) format("woff");
+}
+@font-face {
+  font-family: "Noto Sans CJK JP Subset";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url(/wp-content/themes/#{$theme}/assets/fonts/NotoSans/NotoSansCJKjp-Bold.woff2) format("woff2"),
+    url(/wp-content/themes/#{$theme}/assets/fonts/NotoSans/NotoSansCJKjp-Bold.woff) format("woff");
+}
+@font-face {
+  font-family: "Noto Sans CJK JP Subset";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src:
+    url(/wp-content/themes/#{$theme}/assets/fonts/NotoSans/NotoSansCJKjp-Black.woff2) format("woff2"),
+    url(/wp-content/themes/#{$theme}/assets/fonts/NotoSans/NotoSansCJKjp-Black.woff) format("woff");
+}

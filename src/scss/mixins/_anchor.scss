@@ -1,0 +1,28 @@
+///
+/// Anchor Mixins
+///
+
+/// Always
+@mixin anchor-always($color: #000) {
+  &,
+  &:link,
+  &:visited,
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color;
+    @content;
+  }
+}
+
+/// Except Hover
+@mixin anchor-except-hover($color: #000) {
+  &,
+  &:link,
+  &:visited,
+  &:active,
+  &:focus {
+    color: $color;
+    @content;
+  }
+}

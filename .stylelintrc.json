@@ -1,0 +1,8 @@
+{
+  "extends": ["stylelint-config-recess-order"],
+  "rules": {
+    "max-line-length": 9999,
+    "function-comma-newline-after": "always-multi-line",
+    "number-leading-zero": "never"
+  }
+}

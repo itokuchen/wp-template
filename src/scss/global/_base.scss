@@ -1,0 +1,26 @@
+/**
+ * ----------------------------------------------------------------------------
+ * Global Base
+ * ----------------------------------------------------------------------------
+ */
+@import "../mixins/anchor";
+
+/// Base Font
+body {
+  font-family: "YakuHanJP", "Noto Sans", "Noto Sans CJK JP", "Noto Sans CJK JP Subset", sans-serif;
+  font-size: 16px;
+  color: $black;
+}
+
+/// Anchor Text
+a {
+  @include anchor-always($black) {
+    text-decoration: none;
+  }
+  @media #{media-query(pc)} {
+    &[href^="tel:"] {
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+}

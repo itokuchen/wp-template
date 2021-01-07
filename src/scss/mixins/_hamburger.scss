@@ -1,0 +1,94 @@
+///
+/// Hamburger Mixins
+///
+@mixin hamburger(
+  $container-width: 44px,
+  $container-height: 44px,
+  $width: 44px,
+  $height: 24px,
+  $bar-width: 2px,
+  $bar-corner-radius: 0px,
+  $bar-color: #000,
+  $background: none
+) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: $container-width;
+  height: $container-height;
+  padding: (($container-height - $height) / 2) (($container-width - $width) / 2);
+  background: $background;
+  appearance: none;
+
+  &-bar {
+    display: block;
+    width: $width;
+    height: $bar-width;
+    background: $bar-color;
+    border-radius: $bar-corner-radius;
+    transition: all .25s ease;
+
+    &:nth-child(1) {
+      @at-root .drawer-shown & {
+        @keyframes hamburger-bar-1-on {
+          50% {
+            transform: translateY(($height - $bar-width) / 2);
+          }
+          100% {
+            transform: translateY(($height - $bar-width) / 2) rotate(-45deg);
+          }
+        }
+        animation: hamburger-bar-1-on .8s ease forwards;
+      }
+      @at-root .drawer-hidden & {
+        @keyframes hamburger-bar-1-off {
+          0% {
+            transform: translateY(($height - $bar-width) / 2) rotate(-45deg);
+          }
+          50% {
+            transform: translateY(($height - $bar-width) / 2);
+          }
+          100% {
+            transform: none;
+          }
+        }
+        animation: hamburger-bar-1-off .8s ease forwards;
+      }
+    }
+
+    &:nth-child(2) {
+      @at-root .drawer-shown & {
+        opacity: 0;
+      }
+    }
+
+    &:nth-child(3) {
+      @at-root .drawer-shown & {
+        @keyframes hamburger-bar-3-on {
+          50% {
+            transform: translateY(($height - $bar-width) / -2);
+          }
+          100% {
+            transform: translateY(($height - $bar-width) / -2) rotate(45deg);
+          }
+        }
+        animation: hamburger-bar-3-on .8s ease forwards;
+      }
+      @at-root .drawer-hidden & {
+        @keyframes hamburger-bar-3-off {
+          0% {
+            transform: translateY(($height - $bar-width) / -2) rotate(45deg);
+          }
+          50% {
+            transform: translateY(($height - $bar-width) / -2);
+          }
+          100% {
+            transform: none;
+          }
+        }
+        animation: hamburger-bar-3-off .8s ease forwards;
+      }
+    }
+  }
+}

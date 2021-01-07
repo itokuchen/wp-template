@@ -1,0 +1,30 @@
+/**
+ * ----------------------------------------------------------------------------
+ * Util Class
+ *
+ * Show/Hide by Viewport
+ *
+ * [Usage]
+ * <div class="sp"></div>
+ * <div class="tb pc"></div>
+ * ----------------------------------------------------------------------------
+ */
+
+@media #{media-query(sp)} {
+  .tb:not(.sp),
+  .pc:not(.sp) {
+    display: none;
+  }
+}
+@media #{media-query(tb)} {
+  .sp:not(.tb),
+  .pc:not(.tb) {
+    display: none;
+  }
+}
+@media #{media-query(pc)} {
+  .sp:not(.pc),
+  .tb:not(.pc) {
+    display: none;
+  }
+}

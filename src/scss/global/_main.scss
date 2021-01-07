@@ -1,0 +1,17 @@
+/**
+ * ----------------------------------------------------------------------------
+ * Main
+ * ----------------------------------------------------------------------------
+ */
+.main {
+  width: 100%; // postion: fixed; になっても幅を確保できるよう、必ず指定しておく
+  @media #{media-query(sp)} {
+    min-height: calc(100vh - #{footer-height(sp)});
+  }
+  @media #{media-query(tb)} {
+    min-height: calc(100vh - #{footer-height(tb)});
+  }
+  @media #{media-query(pc)} {
+    min-height: calc(100vh - #{footer-height(pc)});
+  }
+}

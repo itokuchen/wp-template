@@ -1,0 +1,49 @@
+{
+  "private": true,
+  "name": "template",
+  "config": {
+    "theme": "template2020"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "start": "run-s clean build dev",
+    "dev": "run-p bs watch",
+    "bs": "browser-sync start --config bs-config.js",
+    "clean": "rimraf tmp/css www/wp-content/themes/template2020",
+    "build": "run-s build:css",
+    "watch": "run-p watch:css watch:wp",
+    "watch:wp": "cpx \"src/theme/**/*\" www/wp-content/themes/template2020 -w",
+    "release": "run-s clean copy:theme release:css copy:release",
+    "copy:csslibs": "cpx \"src/csslibs/*\" www/wp-content/themes/template2020/assets/css/libs",
+    "copy:theme": "cpx \"src/theme/**/*\" www/wp-content/themes/template2020",
+    "copy:release": "cpx \"www/wp-content/themes/template2020/assets/css/*\" release/assets/css",
+    "build:sass": "node-sass src/scss/pages -o tmp/css -r --source-map-embed true --output-style expanded",
+    "watch:sass": "node-sass src/scss/pages -o tmp/css -r --source-map-embed true --output-style expanded -w",
+    "release:sass": "node-sass src/scss/pages -o tmp/css -r --output-style compressed",
+    "build:ap": "postcss tmp/css --use autoprefixer --base tmp/css -d www/wp-content/themes/template2020/assets/css/",
+    "watch:ap": "postcss tmp/css --use autoprefixer --base tmp/css -d www/wp-content/themes/template2020/assets/css/ -w",
+    "release:ap": "postcss tmp/css --use autoprefixer --base tmp/css -d www/wp-content/themes/template2020/assets/css/ --no-map",
+    "build:css": "run-s copy:csslibs build:sass build:ap",
+    "watch:css": "run-p watch:sass watch:ap",
+    "release:css": "run-s copy:csslibs release:sass release:ap"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.1.0",
+    "browser-sync": "^2.26.13",
+    "cpx": "^1.5.0",
+    "node-sass": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.1",
+    "postcss-cli": "^8.3.1",
+    "rimraf": "^3.0.2",
+    "stylelint": "^13.8.0",
+    "stylelint-config-recess-order": "^2.3.0",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-scss": "^3.18.0"
+  },
+  "dependencies": {
+    "yakuhanjp": "^3.3.1"
+  }
+}

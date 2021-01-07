@@ -1,0 +1,45 @@
+///
+/// WP Theme
+///
+$theme: 'template';
+
+///
+/// Color
+///
+$black: #000;
+
+///
+/// Media Query
+///
+$media-query: (
+  sp: "(max-width: 767px)",
+  tb: "(min-width: 768px) and (max-width: 1279px)",
+  pc: "(min-width: 1280px)"
+);
+@function media-query($media) {
+  @return map-get($media-query, $media);
+}
+
+///
+/// Header Height
+///
+$header-height: (
+  sp: 60px,
+  tb: 60px,
+  pc: 80px
+);
+@function header-height($media) {
+  @return map-get($header-height, $media);
+}
+
+///
+/// Footer Height
+///
+$footer-height: (
+  sp: 100px,
+  tb: 100px,
+  pc: 100px
+);
+@function footer-height($media) {
+  @return map-get($footer-height, $media);
+}

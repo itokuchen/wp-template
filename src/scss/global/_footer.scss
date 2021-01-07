@@ -1,0 +1,134 @@
+/**
+ * ----------------------------------------------------------------------------
+ * Footer
+ * ----------------------------------------------------------------------------
+ */
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  @media #{media-query(sp)} {
+    padding: 40px 0 60px;
+  }
+  @media #{media-query(tb)} {
+    padding: 40px 0 60px;
+  }
+  @media #{media-query(pc)} {
+    padding: 40px 0 60px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: block;
+    height: 1px;
+    margin: 0 auto;
+    content: "";
+    border-top: 1px solid #999;
+    @media #{media-query(sp)} {
+      width: 320px;
+      max-width: 480px;
+    }
+    @media #{media-query(tb)} {
+      width: 480px;
+    }
+    @media #{media-query(pc)} {
+      width: 1000px;
+    }
+  }
+
+  &-pagetop {
+    position: absolute;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    @media #{media-query(sp)} {
+      top: -40px;
+      width: 80px;
+      height: 40px;
+    }
+    @media #{media-query(tb)} {
+      top: -40px;
+      width: 80px;
+      height: 40px;
+    }
+    @media #{media-query(pc)} {
+      top: -40px;
+      width: 80px;
+      height: 40px;
+    }
+
+    &::before {
+      display: block;
+      width: 11px;
+      height: 11px;
+      margin: 0 auto;
+      content: "";
+      border-top: 1px solid $black;
+      border-left: 1px solid $black;
+      transform: rotate(45deg);
+    }
+
+    span {
+      display: block;
+      margin: 2px 0 0;
+      font-weight: 500;
+      @media #{media-query(sp)} {
+        font-size: 15px;
+      }
+      @media #{media-query(tb)} {
+        font-size: 15px;
+      }
+      @media #{media-query(pc)} {
+        font-size: 15px;
+      }
+    }
+
+    @media (hover: hover) {
+      &::before {
+        transition: .25s;
+      }
+      &:hover::before {
+        transform: translateY(-4px) rotate(45deg);
+      }
+    }
+  }
+
+  &-name {
+    font-weight: 700;
+    text-indent: .2em;
+    letter-spacing: .2em;
+    @media #{media-query(sp)} {
+      font-size: 15px;
+    }
+    @media #{media-query(tb)} {
+      font-size: 15px;
+    }
+    @media #{media-query(pc)} {
+      font-size: 15px;
+    }
+  }
+
+  &-copyright {
+    font-weight: 300;
+    @media #{media-query(sp)} {
+      margin: 12px 0 0;
+      font-size: 10px;
+    }
+    @media #{media-query(tb)} {
+      margin: 12px 0 0;
+      font-size: 10px;
+    }
+    @media #{media-query(pc)} {
+      margin: 12px 0 0;
+      font-size: 10px;
+    }
+  }
+}
